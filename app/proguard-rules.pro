@@ -1,30 +1,21 @@
-# SaveTo ProGuard/R8 Rules
+-keep class save.to.com.SaveViewModel {
+    public <init>(android.app.Application);
+}
 
-# Keep the share activity and viewmodel entry points
--keep class save.to.com.ShareActivity { *; }
--keep class save.to.com.SaveViewModel { *; }
+-repackageclasses 's'
+-allowaccessmodification
 
-# Keep ActivityResult contracts used via reflection
--keep class save.to.com.ShareActivity$CreateDocumentContract { *; }
-
-# AndroidX Activity Result API
--keep class androidx.activity.result.** { *; }
--keep class androidx.activity.result.contract.** { *; }
-
-# Kotlin coroutines
--dontwarn kotlinx.coroutines.**
--keep class kotlinx.coroutines.android.AndroidDispatcherFactory { *; }
-
-# Remove verbose kotlin metadata
--dontwarn kotlin.reflect.jvm.internal.**
 -assumenosideeffects class kotlin.jvm.internal.Intrinsics {
+    static void checkNotNull(...);
     static void checkNotNullParameter(...);
     static void checkNotNullExpressionValue(...);
     static void checkParameterIsNotNull(...);
     static void checkExpressionValueIsNotNull(...);
+    static void throwParameterIsNullException(...);
+    static void throwNpe(...);
 }
 
-# Strip debug info for smaller binary
--allowaccessmodification
--repackageclasses ''
--optimizationpasses 5
+-keepattributes !SourceFile,!LineNumberTable,!LocalVariableTable,!LocalVariableTypeTable,Signature,InnerClasses,EnclosingMethod
+
+-dontwarn kotlinx.coroutines.**
+-dontwarn kotlin.reflect.jvm.internal.**

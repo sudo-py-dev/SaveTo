@@ -2,19 +2,15 @@
 <resources>
     <string name="app_name">SaveTo</string>
 
-    <!-- Toast messages -->
     <string name="save_cancelled">Save cancelled</string>
     <string name="saved_successfully">Saved successfully</string>
     <string name="saved_n_files">Saved %1$d files successfully</string>
 
-    <!-- Progress -->
     <string name="saving">Saving…</string>
 
-    <!-- Dialog -->
     <string name="error_title">Error</string>
     <string name="ok">OK</string>
 
-    <!-- Error messages -->
     <string name="error_intent_empty">Invalid request: Intent is empty.</string>
     <string name="error_file_path_missing">Original file path is missing.</string>
     <string name="error_files_list_missing">Original files list is missing.</string>
@@ -31,7 +27,6 @@
     <string name="error_unknown_io">Unknown I/O error</string>
     <string name="error_saved_partial">Saved %1$d / %2$d files.\n\nErrors:\n%3$s</string>
 
-    <!-- Fallback names -->
     <string name="default_filename">shared_file</string>
     <string name="default_text_filename">shared_text.txt</string>
     <string name="unknown_file">Unknown file</string>

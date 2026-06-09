@@ -145,7 +145,6 @@ class SaveViewModel(application: Application) : AndroidViewModel(application) {
                     }
                 }
             } catch (_: SecurityException) {
-                // Provider denied query; fall through with default name
             }
         } else if (uri.scheme == ContentResolver.SCHEME_FILE) {
             uri.path?.let { path ->
@@ -163,7 +162,6 @@ class SaveViewModel(application: Application) : AndroidViewModel(application) {
             }
         }
 
-        // Avoid */* which causes SAF issues on older Android versions
         if (mime == "*/*") {
             mime = "application/octet-stream"
         }
@@ -208,7 +206,6 @@ class SaveViewModel(application: Application) : AndroidViewModel(application) {
         try {
             DocumentsContract.deleteDocument(resolver, uri)
         } catch (_: Exception) {
-            // best-effort cleanup
         }
     }
 

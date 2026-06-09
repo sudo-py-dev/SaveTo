@@ -1,26 +1,15 @@
-# Gradle files and build directory
 .gradle/
 build/
 app/build/
-
-# Kotlin
 .kotlin/
-
-# Android Studio / IntelliJ IDEA
 .idea/
 *.iml
 *.ipr
 *.iws
 out/
-
-# Local configuration (SDK path, credentials)
 local.properties
 keystore.properties
 app/release-key.jks
-
-# Log files
 *.log
-
-# OS files
 .DS_Store
 Thumbs.db

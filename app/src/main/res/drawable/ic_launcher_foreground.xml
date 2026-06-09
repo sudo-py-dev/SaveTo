@@ -4,20 +4,17 @@
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <!-- Arrow Shaft -->
     <path
         android:pathData="M 54,34 L 54,60"
         android:strokeWidth="5"
         android:strokeColor="#FFFFFF"
         android:strokeLineCap="round"/>
-    <!-- Arrow Head -->
     <path
         android:pathData="M 44,50 L 54,60 L 64,50"
         android:strokeWidth="5"
         android:strokeColor="#FFFFFF"
         android:strokeLineCap="round"
         android:strokeLineJoin="round"/>
-    <!-- Destination Bracket/Tray -->
     <path
         android:pathData="M 34,62 L 34,70 C 34,72.2 35.8,74 38,74 L 70,74 C 72.2,74 74,72.2 74,70 L 74,62"
         android:strokeWidth="5"
