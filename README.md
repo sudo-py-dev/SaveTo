@@ -15,6 +15,16 @@
   SaveTo is a lightweight, single-purpose Android utility that integrates into the system-wide sharing sheet to save shared files, multiple documents, or text directly to any destination chosen via the Storage Access Framework (SAF).
 </p>
 
+<p align="center">
+  <a href="https://github.com/sudo-py-dev/SaveTo/releases/latest/download/app-foss-release.apk">
+    <img src="https://img.shields.io/badge/Download-FOSS%20APK-orange?style=for-the-badge&logo=android&logoColor=white" height="40" alt="Download FOSS APK" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/sudo-py-dev/SaveTo/releases/latest/download/app-googlePlay-release.apk">
+    <img src="https://img.shields.io/badge/Download-Google%20Play%20APK-blue?style=for-the-badge&logo=googleplay&logoColor=white" height="40" alt="Download Google Play APK" />
+  </a>
+</p>
+
 ---
 
 ## Visual Preview
@@ -29,8 +39,6 @@
 
 ---
 
----
-
 ## Key Features
 
 - **Seamless Share Target**: Integrates directly with Android's system share sheet, registering for `android.intent.action.SEND` and `android.intent.action.SEND_MULTIPLE` across all MIME types (`*/*`).
@@ -42,46 +50,47 @@
 
 ---
 
-## Technical Architecture
+<details>
+  <summary>🛠️ Developer & Build Guide</summary>
 
-The codebase is structured following clean Android architecture principles, utilizing Kotlin, Coroutines, and Android Jetpack Architecture Components.
+  ### Technical Architecture
 
-```mermaid
-graph TD
-    Intent[Incoming Share Intent] --> |SEND / SEND_MULTIPLE| Activity[ShareActivity]
-    Activity --> |Resolve Metadata| VM[SaveViewModel]
-    Activity --> |Launch Picker| SAF[Storage Access Framework]
-    SAF --> |Dest URI| VM
-    VM --> |Coroutines IO Dispatcher| Save[Buffered Stream Write]
-```
+  The codebase is structured following clean Android architecture principles, utilizing Kotlin, Coroutines, and Android Jetpack Architecture Components.
 
-### Components
+  ```mermaid
+  graph TD
+      Intent[Incoming Share Intent] --> |SEND / SEND_MULTIPLE| Activity[ShareActivity]
+      Activity --> |Resolve Metadata| VM[SaveViewModel]
+      Activity --> |Launch Picker| SAF[Storage Access Framework]
+      SAF --> |Dest URI| VM
+      VM --> |Coroutines IO Dispatcher| Save[Buffered Stream Write]
+  ```
 
-- **[AndroidManifest.xml](app/src/main/AndroidManifest.xml)**: Configures the intent filters, theme settings, and application metadata. `ShareActivity` is configured with a translucent theme (`Theme.Translucent.NoTitleBar`) so that it overlays seamlessly onto the system share dialog.
-- **[ShareActivity.kt](app/src/main/kotlin/com/save/to/ShareActivity.kt)**: Manages UI, checks URI read access, interacts with the Android Storage Access Framework (using `ActivityResultContracts.CreateDocument` and `OpenDocumentTree`), and shows standard system alerts and progress dialogs.
-- **[SaveViewModel.kt](app/src/main/kotlin/com/save/to/SaveViewModel.kt)**: Houses the business logic for resolving source file details, performing high-performance I/O operations using a buffered stream (`8KB` buffer size), managing state, and cleaning up cache files.
-- **[strings.xml](app/src/main/res/values/strings.xml)**: Declares all UI string resources and error messages for user-facing localization.
+  ### Components
 
----
+  - **[AndroidManifest.xml](app/src/main/AndroidManifest.xml)**: Configures the intent filters, theme settings, and application metadata. `ShareActivity` is configured with a translucent theme (`Theme.Translucent.NoTitleBar`) so that it overlays seamlessly onto the system share dialog.
+  - **[ShareActivity.kt](app/src/main/kotlin/com/save/to/ShareActivity.kt)**: Manages UI, checks URI read access, interacts with the Android Storage Access Framework (using `ActivityResultContracts.CreateDocument` and `OpenDocumentTree`), and shows standard system alerts and progress dialogs.
+  - **[SaveViewModel.kt](app/src/main/kotlin/com/save/to/SaveViewModel.kt)**: Houses the business logic for resolving source file details, performing high-performance I/O operations using a buffered stream (`8KB` buffer size), managing state, and cleaning up cache files.
+  - **[strings.xml](app/src/main/res/values/strings.xml)**: Declares all UI string resources and error messages for user-facing localization.
 
-## Development & Build Requirements
+  ### Development & Build Requirements
 
-- **SDK Targets**: Min SDK `23` (Android 6.0), Target SDK `35` (Android 15)
-- **Java Compatibility**: JDK `17` toolchain
-- **Build Tool**: Gradle Kotlin DSL
+  - **SDK Targets**: Min SDK `23` (Android 6.0), Target SDK `35` (Android 15)
+  - **Java Compatibility**: JDK `17` toolchain
+  - **Build Tool**: Gradle Kotlin DSL
 
-### Code Styling and Design
+  ### Code Styling and Design
 
-This application strictly follows modern development standards:
-- **Coroutines for Asynchronous I/O**: Offloads stream writing tasks to `Dispatchers.IO` and uses `ensureActive()` inside loops to respect lifecycle cancellation.
-- **No Force Unwraps**: Handles null values gracefully and relies on defensive typing contracts to prevent runtime crashes.
-- **Resource Cleanup**: Employs `use { ... }` blocks for Kotlin `Closeable` objects, ensuring input and output streams are safely closed under all circumstances.
+  This application strictly follows modern development standards:
+  - **Coroutines for Asynchronous I/O**: Offloads stream writing tasks to `Dispatchers.IO` and uses `ensureActive()` inside loops to respect lifecycle cancellation.
+  - **No Force Unwraps**: Handles null values gracefully and relies on defensive typing contracts to prevent runtime crashes.
+  - **Resource Cleanup**: Employs `use { ... }` blocks for Kotlin `Closeable` objects, ensuring input and output streams are safely closed under all circumstances.
 
-### Building the Project
+  ### Building the Project
 
-Ensure you have a valid `keystore.properties` file configured in the root directory prior to building. Run the following command from the project root to compile a release build:
+  Ensure you have a valid `keystore.properties` file configured in the root directory prior to building. Run the following command from the project root to compile a release build:
 
-```bash
-./gradlew assembleRelease
-```
-
+  ```bash
+  ./gradlew assembleRelease
+  ```
+</details>
