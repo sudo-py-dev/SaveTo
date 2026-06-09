@@ -63,16 +63,3 @@ Ensure you have a valid `keystore.properties` file configured in the root direct
 ./gradlew assembleRelease
 ```
 
----
-
-## GitHub Actions & Automated Releases
-
-This project utilizes GitHub Actions for continuous integration and automated releases. 
-
-### Continuous Integration (CI)
-On every push and pull request to the `main` branch, the [Android CI workflow](.github/workflows/ci.yml) executes:
-1. Runs all unit tests.
-2. Compiles a debug build to ensure codebase integrity.
-
-### Automated Releases (Current version: `v1.1`)
-When a version tag is pushed (e.g., `v1.1`), the [Publish Android Release workflow](.github/workflows/release.yml) is triggered. It builds, signs, and attaches both Google Play and FOSS release APKs and App Bundles (`.apk` and `.aab`) to a newly drafted/published GitHub Release.
