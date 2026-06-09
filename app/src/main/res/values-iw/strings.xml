@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">שמירה במכשיר</string>
+
+    <string name="save_cancelled">השמירה בוטלה</string>
+    <string name="saved_successfully">נשמר בהצלחה</string>
+    <string name="saved_n_files">%1$d קבצים נשמרו בהצלחה</string>
+
+    <string name="saving">שומר…</string>
+
+    <string name="error_title">שגיאה</string>
+    <string name="ok">אישור</string>
+
+    <string name="error_intent_empty">בקשה לא תקינה: הפעולה ריקה.</string>
+    <string name="error_file_path_missing">נתיב הקובץ המקורי חסר.</string>
+    <string name="error_files_list_missing">רשימת הקבצים המקורית חסרה.</string>
+    <string name="error_no_content">לא שותף תוכן.</string>
+    <string name="error_no_files">לא שותפו קבצים.</string>
+    <string name="error_permission_denied">אין גישה לקובץ המשותף. הגישה נדחתה.</string>
+    <string name="error_read_metadata">קריאת מידע הקובץ נכשלה:\n%1$s</string>
+    <string name="error_process_text">עיבוד הטקסט המשותף נכשל:\n%1$s</string>
+    <string name="error_save_file">שמירת הקובץ נכשלה:\n%1$s</string>
+    <string name="error_unsupported_action">פעולה לא נתמכת: %1$s</string>
+    <string name="error_create_file">לא ניתן ליצור קובץ: %1$s</string>
+    <string name="error_open_input">לא ניתן לפתוח זרם קלט עבור %1$s</string>
+    <string name="error_open_output">לא ניתן לפתוח זרם פלט עבור %1$s</string>
+    <string name="error_unknown_io">שגיאת קלט/פלט לא ידועה</string>
+    <string name="error_saved_partial">נשמרו %1$d מתוך %2$d קבצים.\n\nשגיאות:\n%3$s</string>
+
+    <string name="default_filename">קובץ_משותף</string>
+    <string name="default_text_filename">טקסט_משותף.txt</string>
+    <string name="unknown_file">קובץ לא ידוע</string>
+</resources>

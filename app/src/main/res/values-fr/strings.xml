@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SaveTo</string>
+
+    <string name="save_cancelled">Sauvegarde annulée</string>
+    <string name="saved_successfully">Sauvegardé avec succès</string>
+    <string name="saved_n_files">%1$d fichiers sauvegardés avec succès</string>
+
+    <string name="saving">Sauvegarde…</string>
+
+    <string name="error_title">Erreur</string>
+    <string name="ok">OK</string>
+
+    <string name="error_intent_empty">Requête invalide : l\'intention est vide.</string>
+    <string name="error_file_path_missing">Le chemin du fichier d\'origine est manquant.</string>
+    <string name="error_files_list_missing">La liste des fichiers d\'origine est manquante.</string>
+    <string name="error_no_content">Aucun contenu partagé.</string>
+    <string name="error_no_files">Aucun fichier partagé.</string>
+    <string name="error_permission_denied">Impossible d\'accéder au fichier partagé. Permission refusée.</string>
+    <string name="error_read_metadata">Échec de lecture des métadonnées du fichier :\n%1$s</string>
+    <string name="error_process_text">Échec du traitement du texte partagé :\n%1$s</string>
+    <string name="error_save_file">Échec de la sauvegarde du fichier :\n%1$s</string>
+    <string name="error_unsupported_action">Action non prise en charge : %1$s</string>
+    <string name="error_create_file">Impossible de créer le fichier : %1$s</string>
+    <string name="error_open_input">Impossible d\'ouvrir le flux d\'entrée pour %1$s</string>
+    <string name="error_open_output">Impossible d\'ouvrir le flux de sortie pour %1$s</string>
+    <string name="error_unknown_io">Erreur d\'E/S inconnue</string>
+    <string name="error_saved_partial">%1$d sur %2$d fichiers sauvegardés.\n\nErreurs :\n%3$s</string>
+
+    <string name="default_filename">fichier_partagé</string>
+    <string name="default_text_filename">texte_partagé.txt</string>
+    <string name="unknown_file">Fichier inconnu</string>
+</resources>

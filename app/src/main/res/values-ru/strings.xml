@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SaveTo</string>
+
+    <string name="save_cancelled">Сохранение отменено</string>
+    <string name="saved_successfully">Сохранено успешно</string>
+    <string name="saved_n_files">Сохранено файлов: %1$d</string>
+
+    <string name="saving">Сохранение…</string>
+
+    <string name="error_title">Ошибка</string>
+    <string name="ok">ОК</string>
+
+    <string name="error_intent_empty">Неверный запрос: намерение пустое.</string>
+    <string name="error_file_path_missing">Путь к исходному файлу отсутствует.</string>
+    <string name="error_files_list_missing">Список исходных файлов отсутствует.</string>
+    <string name="error_no_content">Нет содержимого для сохранения.</string>
+    <string name="error_no_files">Нет файлов для сохранения.</string>
+    <string name="error_permission_denied">Нет доступа к файлу. Доступ запрещён.</string>
+    <string name="error_read_metadata">Не удалось прочитать метаданные файла:\n%1$s</string>
+    <string name="error_process_text">Не удалось обработать текст:\n%1$s</string>
+    <string name="error_save_file">Не удалось сохранить файл:\n%1$s</string>
+    <string name="error_unsupported_action">Неподдерживаемое действие: %1$s</string>
+    <string name="error_create_file">Не удалось создать файл: %1$s</string>
+    <string name="error_open_input">Не удалось открыть входной поток для %1$s</string>
+    <string name="error_open_output">Не удалось открыть выходной поток для %1$s</string>
+    <string name="error_unknown_io">Неизвестная ошибка ввода-вывода</string>
+    <string name="error_saved_partial">Сохранено %1$d из %2$d файлов.\n\nОшибки:\n%3$s</string>
+
+    <string name="default_filename">общий_файл</string>
+    <string name="default_text_filename">общий_текст.txt</string>
+    <string name="unknown_file">Неизвестный файл</string>
+</resources>
