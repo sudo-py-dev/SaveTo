@@ -18,10 +18,18 @@ android {
 
     signingConfigs {
         create("release") {
-            storeFile = file(keystoreProperties.getProperty("storeFile", ""))
-            storePassword = keystoreProperties.getProperty("storePassword", "")
-            keyAlias = keystoreProperties.getProperty("keyAlias", "")
-            keyPassword = keystoreProperties.getProperty("keyPassword", "")
+            val storePath = keystoreProperties.getProperty("storeFile", "")
+            if (storePath.isNotEmpty()) {
+                storeFile = file(storePath)
+                storePassword = keystoreProperties.getProperty("storePassword", "")
+                keyAlias = keystoreProperties.getProperty("keyAlias", "")
+                keyPassword = keystoreProperties.getProperty("keyPassword", "")
+            } else {
+                storeFile = file("dummy.jks")
+                storePassword = "dummy_password"
+                keyAlias = "dummy_alias"
+                keyPassword = "dummy_password"
+            }
         }
     }
 
