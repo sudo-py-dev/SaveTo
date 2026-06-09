@@ -1,8 +1,8 @@
 # SaveTo
 
 [![Android CI](https://github.com/sudo-py-dev/SaveTo/actions/workflows/ci.yml/badge.svg)](https://github.com/sudo-py-dev/SaveTo/actions/workflows/ci.yml)
-[![GitHub Release](https://img.shields.io/github/v/release/sudo-py-dev/SaveTo?logo=github&color=blue)](https://github.com/sudo-py-dev/SaveTo/releases)
-[![License](https://img.shields.io/github/license/sudo-py-dev/SaveTo?color=orange)](LICENSE)
+[![GitHub Release](https://img.shields.io/badge/release-v1.1-blue.svg?logo=github)](https://github.com/sudo-py-dev/SaveTo/releases)
+[![License](https://img.shields.io/badge/license-Apache--2.0-orange.svg)](LICENSE)
 [![API Level](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat&logo=android)](https://android-arsenal.com/api?level=21)
 
 SaveTo is a lightweight, single-purpose Android utility that integrates into the system-wide sharing sheet to save shared files, multiple documents, or text directly to any destination chosen via the Storage Access Framework (SAF).
