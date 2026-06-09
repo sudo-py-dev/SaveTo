@@ -24,7 +24,7 @@ jobs:
 
     - name: Decode Keystore
       run: |
-        echo "${{ secrets.RELEASE_KEYSTORE_BASE64 }}" | base64 --decode > app/release-key.jks
+        echo "${{ secrets.RELEASE_KEYSTORE_BASE64 }}" | base64 --decode --ignore-garbage > app/release-key.jks
 
     - name: Create Keystore Properties
       run: |
