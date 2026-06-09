@@ -13,7 +13,7 @@ if (keystorePropertiesFile.exists()) {
 
 android {
     namespace = "com.save.to"
-    compileSdk = 35
+    compileSdk = 36
 
     signingConfigs {
         create("release") {
