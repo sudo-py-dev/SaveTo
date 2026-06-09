@@ -20,10 +20,6 @@
     <img src="https://img.shields.io/badge/Download-FOSS%20APK-orange?style=for-the-badge&logo=android&logoColor=white" height="40" alt="Download FOSS APK" />
   </a>
   &nbsp;&nbsp;
-  <a href="https://github.com/sudo-py-dev/SaveTo/releases/latest/download/app-googlePlay-release.apk">
-    <img src="https://img.shields.io/badge/Download-Google%20Play%20APK-blue?style=for-the-badge&logo=googleplay&logoColor=white" height="40" alt="Download Google Play APK" />
-  </a>
-  &nbsp;&nbsp;
   <a href="https://github.com/sudo-py-dev/SaveTo/releases/latest">
     <img src="https://img.shields.io/badge/Download_on-GitHub-black?style=for-the-badge&logo=github&logoColor=white" height="40" alt="Download on GitHub" />
   </a>

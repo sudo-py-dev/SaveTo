@@ -38,16 +38,14 @@ jobs:
     - name: Grant Execute Permission for Gradlew
       run: chmod +x gradlew
 
-    - name: Build Release APKs & Bundles
-      run: ./gradlew assembleRelease bundleRelease
+    - name: Build FOSS Release APK & Bundle
+      run: ./gradlew assembleFossRelease bundleFossRelease
 
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v3
       with:
         files: |
-          app/build/outputs/apk/googlePlay/release/app-googlePlay-release.apk
           app/build/outputs/apk/foss/release/app-foss-release.apk
-          app/build/outputs/bundle/googlePlayRelease/app-googlePlay-release.aab
           app/build/outputs/bundle/fossRelease/app-foss-release.aab
         generate_release_notes: true
         draft: false
