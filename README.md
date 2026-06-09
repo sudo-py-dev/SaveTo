@@ -8,7 +8,7 @@
   <a href="https://github.com/sudo-py-dev/SaveTo/actions/workflows/ci.yml"><img src="https://github.com/sudo-py-dev/SaveTo/actions/workflows/ci.yml/badge.svg" alt="Android CI" /></a>
   <a href="https://github.com/sudo-py-dev/SaveTo/releases"><img src="https://img.shields.io/badge/release-v1.1-blue.svg?logo=github" alt="GitHub Release" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-orange.svg" alt="License" /></a>
-  <a href="https://android-arsenal.com/api?level=21"><img src="https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat&logo=android" alt="API Level" /></a>
+  <a href="https://android-arsenal.com/api?level=23"><img src="https://img.shields.io/badge/API-23%2B-brightgreen.svg?style=flat&logo=android" alt="API Level" /></a>
 </p>
 
 <p align="center">
@@ -66,7 +66,7 @@ graph TD
 
 ## Development & Build Requirements
 
-- **SDK Targets**: Min SDK `21` (Android 5.0), Target SDK `34` (Android 14)
+- **SDK Targets**: Min SDK `23` (Android 6.0), Target SDK `35` (Android 15)
 - **Java Compatibility**: JDK `17` toolchain
 - **Build Tool**: Gradle Kotlin DSL
 
