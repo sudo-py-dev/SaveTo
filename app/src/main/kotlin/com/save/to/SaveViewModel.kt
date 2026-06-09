@@ -1,4 +1,4 @@
-package save.to.com
+package com.save.to
 
 import android.app.Application
 import android.content.ContentResolver
@@ -20,7 +20,7 @@ import java.io.IOException
 import java.io.InputStream
 import java.io.OutputStream
 
-class SaveViewModel(application: Application) : AndroidViewModel(application) {
+open class SaveViewModel(application: Application) : AndroidViewModel(application) {
 
     sealed interface State {
         data object Idle : State
@@ -171,9 +171,9 @@ class SaveViewModel(application: Application) : AndroidViewModel(application) {
 
     private fun createDocumentInTree(treeUri: Uri, mimeType: String, displayName: String): Uri? {
         return try {
-            val treeDocId = DocumentsContract.getTreeDocumentId(treeUri)
-            val parentUri = DocumentsContract.buildDocumentUriUsingTree(treeUri, treeDocId)
-            DocumentsContract.createDocument(resolver, parentUri, mimeType, displayName)
+            val treeDocId = getTreeDocumentId(treeUri)
+            val parentUri = buildDocumentUriUsingTree(treeUri, treeDocId)
+            createDocument(resolver, parentUri, mimeType, displayName)
         } catch (_: Exception) {
             null
         }
@@ -204,13 +204,21 @@ class SaveViewModel(application: Application) : AndroidViewModel(application) {
 
     private fun tryDeleteDocument(uri: Uri) {
         try {
-            DocumentsContract.deleteDocument(resolver, uri)
+            deleteDocument(resolver, uri)
         } catch (_: Exception) {
         }
     }
 
     private fun sanitizeFilename(name: String): String {
         return name.replace(Regex("[\\\\/:*?\"<>|]"), "_").trim().ifEmpty { "shared_file" }
+    }
+
+    internal open fun getTreeDocumentId(uri: Uri): String = DocumentsContract.getTreeDocumentId(uri)
+    internal open fun buildDocumentUriUsingTree(uri: Uri, docId: String): Uri = DocumentsContract.buildDocumentUriUsingTree(uri, docId)
+    internal open fun createDocument(resolver: ContentResolver, parentUri: Uri, mimeType: String, displayName: String): Uri? =
+        DocumentsContract.createDocument(resolver, parentUri, mimeType, displayName)
+    internal open fun deleteDocument(resolver: ContentResolver, uri: Uri) {
+        DocumentsContract.deleteDocument(resolver, uri)
     }
 
     companion object {

@@ -13,7 +13,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    namespace = "save.to.com"
+    namespace = "com.save.to"
     compileSdk = 34
 
     signingConfigs {
@@ -26,14 +26,20 @@ android {
     }
 
     defaultConfig {
-        applicationId = "save.to.com"
+        applicationId = "com.save.to"
         minSdk = 21
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+    }
 
-        ndk {
-            abiFilters += listOf("arm64-v8a")
+    flavorDimensions += "store"
+    productFlavors {
+        create("googlePlay") {
+            dimension = "store"
+        }
+        create("foss") {
+            dimension = "store"
         }
     }
 
@@ -78,4 +84,9 @@ android {
 dependencies {
     implementation("androidx.activity:activity-ktx:1.9.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
+
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.1")
+    testImplementation("io.mockk:mockk:1.13.12")
+    testImplementation("org.robolectric:robolectric:4.12.2")
 }
