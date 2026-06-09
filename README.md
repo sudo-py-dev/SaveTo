@@ -1,5 +1,10 @@
 # SaveTo
 
+[![Android CI](https://github.com/sudo-py-dev/SaveTo/actions/workflows/ci.yml/badge.svg)](https://github.com/sudo-py-dev/SaveTo/actions/workflows/ci.yml)
+[![GitHub Release](https://img.shields.io/github/v/release/sudo-py-dev/SaveTo?logo=github&color=blue)](https://github.com/sudo-py-dev/SaveTo/releases)
+[![License](https://img.shields.io/github/license/sudo-py-dev/SaveTo?color=orange)](LICENSE)
+[![API Level](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat&logo=android)](https://android-arsenal.com/api?level=21)
+
 SaveTo is a lightweight, single-purpose Android utility that integrates into the system-wide sharing sheet to save shared files, multiple documents, or text directly to any destination chosen via the Storage Access Framework (SAF).
 
 ---
@@ -57,3 +62,26 @@ Ensure you have a valid `keystore.properties` file configured in the root direct
 ```bash
 ./gradlew assembleRelease
 ```
+
+---
+
+## GitHub Actions & Automated Releases
+
+This project utilizes GitHub Actions for continuous integration and automated releases. 
+
+### Continuous Integration (CI)
+On every push and pull request to the `main` branch, the [Android CI workflow](.github/workflows/ci.yml) executes:
+1. Runs all unit tests.
+2. Compiles a debug build to ensure codebase integrity.
+
+### Automated Releases
+When a version tag is pushed (e.g., `v1.1`), the [Publish Android Release workflow](.github/workflows/release.yml) is triggered. It builds, signs, and attaches both Google Play and FOSS release APKs and App Bundles (`.apk` and `.aab`) to a newly drafted/published GitHub Release.
+
+To enable automated release signing, you must configure the following **GitHub Repository Secrets** (under `Settings > Secrets and variables > Actions`):
+
+| Secret Name | Description | Example / Instructions |
+| --- | --- | --- |
+| `RELEASE_KEYSTORE_BASE64` | Base64-encoded string of your release `.jks` file | On Linux, run `base64 -w 0 app/release-key.jks` |
+| `RELEASE_KEYSTORE_PASSWORD` | The password of your release keystore | e.g. `your_keystore_password` |
+| `RELEASE_KEY_ALIAS` | The key alias of your release key | e.g. `your_key_alias` |
+| `RELEASE_KEY_PASSWORD` | The key password of your release key | e.g. `your_key_password` |
