@@ -1,11 +1,33 @@
-# SaveTo
+<p align="center">
+  <img src="graphics/app_icon.svg" width="128" height="128" alt="SaveTo App Icon" />
+</p>
 
-[![Android CI](https://github.com/sudo-py-dev/SaveTo/actions/workflows/ci.yml/badge.svg)](https://github.com/sudo-py-dev/SaveTo/actions/workflows/ci.yml)
-[![GitHub Release](https://img.shields.io/badge/release-v1.1-blue.svg?logo=github)](https://github.com/sudo-py-dev/SaveTo/releases)
-[![License](https://img.shields.io/badge/license-Apache--2.0-orange.svg)](LICENSE)
-[![API Level](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat&logo=android)](https://android-arsenal.com/api?level=21)
+<h1 align="center">SaveTo</h1>
 
-SaveTo is a lightweight, single-purpose Android utility that integrates into the system-wide sharing sheet to save shared files, multiple documents, or text directly to any destination chosen via the Storage Access Framework (SAF).
+<p align="center">
+  <a href="https://github.com/sudo-py-dev/SaveTo/actions/workflows/ci.yml"><img src="https://github.com/sudo-py-dev/SaveTo/actions/workflows/ci.yml/badge.svg" alt="Android CI" /></a>
+  <a href="https://github.com/sudo-py-dev/SaveTo/releases"><img src="https://img.shields.io/badge/release-v1.1-blue.svg?logo=github" alt="GitHub Release" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-orange.svg" alt="License" /></a>
+  <a href="https://android-arsenal.com/api?level=21"><img src="https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat&logo=android" alt="API Level" /></a>
+</p>
+
+<p align="center">
+  SaveTo is a lightweight, single-purpose Android utility that integrates into the system-wide sharing sheet to save shared files, multiple documents, or text directly to any destination chosen via the Storage Access Framework (SAF).
+</p>
+
+---
+
+## Visual Preview
+
+<p align="center">
+  <img src="graphics/feature_graphic.png" width="800" alt="SaveTo Feature Graphic" />
+</p>
+
+| 1. Share Sheet Integration | 2. Save Location Selection |
+| :-: | :-: |
+| <img src="graphics/phone_screenshot_1_share_sheet.png" width="350" alt="Share Sheet" /> | <img src="graphics/phone_screenshot_2_save_picker.png" width="350" alt="Save Picker" /> |
+
+---
 
 ---
 
